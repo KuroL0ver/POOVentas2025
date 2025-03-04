@@ -38,17 +38,17 @@
             TxtCupcake = new TextBox();
             Agregar = new Button();
             DgvPan = new DataGridView();
+            Cliente = new DataGridViewTextBoxColumn();
+            Frances = new DataGridViewTextBoxColumn();
+            Bolillo = new DataGridViewTextBoxColumn();
+            Cupcake = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
             label5 = new Label();
             TxtTotal = new TextBox();
             TxtPrecioPanFrances = new TextBox();
             TxtPrecioBolillo = new TextBox();
             TxtInteresCupcake = new TextBox();
             btnRestaurar = new Button();
-            Cliente = new DataGridViewTextBoxColumn();
-            Frances = new DataGridViewTextBoxColumn();
-            Bolillo = new DataGridViewTextBoxColumn();
-            Cupcake = new DataGridViewTextBoxColumn();
-            Total = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)DgvPan).BeginInit();
             SuspendLayout();
             // 
@@ -158,6 +158,41 @@
             DgvPan.TabIndex = 9;
             DgvPan.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // Cliente
+            // 
+            Cliente.HeaderText = "Cliente";
+            Cliente.MinimumWidth = 6;
+            Cliente.Name = "Cliente";
+            Cliente.Width = 125;
+            // 
+            // Frances
+            // 
+            Frances.HeaderText = "Frances";
+            Frances.MinimumWidth = 6;
+            Frances.Name = "Frances";
+            Frances.Width = 125;
+            // 
+            // Bolillo
+            // 
+            Bolillo.HeaderText = "Bolillo";
+            Bolillo.MinimumWidth = 6;
+            Bolillo.Name = "Bolillo";
+            Bolillo.Width = 125;
+            // 
+            // Cupcake
+            // 
+            Cupcake.HeaderText = "Cupcake";
+            Cupcake.MinimumWidth = 6;
+            Cupcake.Name = "Cupcake";
+            Cupcake.Width = 125;
+            // 
+            // Total
+            // 
+            Total.HeaderText = "Total";
+            Total.MinimumWidth = 6;
+            Total.Name = "Total";
+            Total.Width = 125;
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -217,41 +252,6 @@
             btnRestaurar.Text = "Restaurar";
             btnRestaurar.UseVisualStyleBackColor = true;
             btnRestaurar.Click += btnRestaurar_Click;
-            // 
-            // Cliente
-            // 
-            Cliente.HeaderText = "Cliente";
-            Cliente.MinimumWidth = 6;
-            Cliente.Name = "Cliente";
-            Cliente.Width = 125;
-            // 
-            // Frances
-            // 
-            Frances.HeaderText = "Frances";
-            Frances.MinimumWidth = 6;
-            Frances.Name = "Frances";
-            Frances.Width = 125;
-            // 
-            // Bolillo
-            // 
-            Bolillo.HeaderText = "Bolillo";
-            Bolillo.MinimumWidth = 6;
-            Bolillo.Name = "Bolillo";
-            Bolillo.Width = 125;
-            // 
-            // Cupcake
-            // 
-            Cupcake.HeaderText = "Cupcake";
-            Cupcake.MinimumWidth = 6;
-            Cupcake.Name = "Cupcake";
-            Cupcake.Width = 125;
-            // 
-            // Total
-            // 
-            Total.HeaderText = "Total";
-            Total.MinimumWidth = 6;
-            Total.Name = "Total";
-            Total.Width = 125;
             // 
             // Form1
             // 

@@ -48,7 +48,7 @@
 
         public override decimal CalcularTotal()
         {
-            return Monto + (Monto * Interes);
+            return Monto + (Monto * 0.05m);
         }
     }
 }

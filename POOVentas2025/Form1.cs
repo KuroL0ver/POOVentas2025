@@ -20,7 +20,7 @@ namespace POOVentas2025
 
         private void TxtCliente_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace POOVentas2025
 
         private void TxtBolillo_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
         private void label3_Click(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace POOVentas2025
 
         private void TxtCupcake_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -70,6 +70,7 @@ namespace POOVentas2025
         //El botón de agregar, ayuda a agrergar cuantos panes son y el total de ellos
         private void Agregar_Click(object sender, EventArgs e)
         {
+          
             //Se usa el Try Parse para una cadena de texto en valor decimal, y el usuario no pone un número en el TxtBox, para que no se caiga el programa
             //los && es para que se cumpla lo que el usuario puso en los TxtBox
             //El Trim se puso para que no tengan espacios en blanco
@@ -131,5 +132,7 @@ namespace POOVentas2025
         {
             TxtTotal.Clear();
         }
+
+        
     }
 }
