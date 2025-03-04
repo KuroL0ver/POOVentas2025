@@ -38,17 +38,20 @@
             TxtCupcake = new TextBox();
             Agregar = new Button();
             DgvPan = new DataGridView();
-            Cliente = new DataGridViewTextBoxColumn();
-            Frances = new DataGridViewTextBoxColumn();
-            Bolillo = new DataGridViewTextBoxColumn();
-            Cupcake = new DataGridViewTextBoxColumn();
-            Total = new DataGridViewTextBoxColumn();
             label5 = new Label();
             TxtTotal = new TextBox();
             TxtPrecioPanFrances = new TextBox();
             TxtPrecioBolillo = new TextBox();
             TxtInteresCupcake = new TextBox();
             btnRestaurar = new Button();
+            rbtnContado = new RadioButton();
+            rbtnCredito = new RadioButton();
+            Cliente = new DataGridViewTextBoxColumn();
+            Frances = new DataGridViewTextBoxColumn();
+            Bolillo = new DataGridViewTextBoxColumn();
+            Cupcake = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
+            TipoPago = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)DgvPan).BeginInit();
             SuspendLayout();
             // 
@@ -137,7 +140,7 @@
             // Agregar
             // 
             Agregar.ForeColor = Color.Aqua;
-            Agregar.Location = new Point(373, 317);
+            Agregar.Location = new Point(233, 328);
             Agregar.Name = "Agregar";
             Agregar.Size = new Size(141, 43);
             Agregar.TabIndex = 8;
@@ -149,49 +152,14 @@
             // 
             DgvPan.BackgroundColor = Color.BlueViolet;
             DgvPan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvPan.Columns.AddRange(new DataGridViewColumn[] { Cliente, Frances, Bolillo, Cupcake, Total });
+            DgvPan.Columns.AddRange(new DataGridViewColumn[] { Cliente, Frances, Bolillo, Cupcake, Total, TipoPago });
             DgvPan.GridColor = Color.FromArgb(255, 128, 255);
-            DgvPan.Location = new Point(568, 22);
+            DgvPan.Location = new Point(520, 19);
             DgvPan.Name = "DgvPan";
             DgvPan.RowHeadersWidth = 51;
-            DgvPan.Size = new Size(679, 449);
+            DgvPan.Size = new Size(803, 479);
             DgvPan.TabIndex = 9;
             DgvPan.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Cliente
-            // 
-            Cliente.HeaderText = "Cliente";
-            Cliente.MinimumWidth = 6;
-            Cliente.Name = "Cliente";
-            Cliente.Width = 125;
-            // 
-            // Frances
-            // 
-            Frances.HeaderText = "Frances";
-            Frances.MinimumWidth = 6;
-            Frances.Name = "Frances";
-            Frances.Width = 125;
-            // 
-            // Bolillo
-            // 
-            Bolillo.HeaderText = "Bolillo";
-            Bolillo.MinimumWidth = 6;
-            Bolillo.Name = "Bolillo";
-            Bolillo.Width = 125;
-            // 
-            // Cupcake
-            // 
-            Cupcake.HeaderText = "Cupcake";
-            Cupcake.MinimumWidth = 6;
-            Cupcake.Name = "Cupcake";
-            Cupcake.Width = 125;
-            // 
-            // Total
-            // 
-            Total.HeaderText = "Total";
-            Total.MinimumWidth = 6;
-            Total.Name = "Total";
-            Total.Width = 125;
             // 
             // label5
             // 
@@ -245,7 +213,7 @@
             // btnRestaurar
             // 
             btnRestaurar.ForeColor = Color.DarkCyan;
-            btnRestaurar.Location = new Point(373, 389);
+            btnRestaurar.Location = new Point(233, 389);
             btnRestaurar.Name = "btnRestaurar";
             btnRestaurar.Size = new Size(141, 43);
             btnRestaurar.TabIndex = 15;
@@ -253,11 +221,79 @@
             btnRestaurar.UseVisualStyleBackColor = true;
             btnRestaurar.Click += btnRestaurar_Click;
             // 
+            // rbtnContado
+            // 
+            rbtnContado.AutoSize = true;
+            rbtnContado.Location = new Point(64, 347);
+            rbtnContado.Name = "rbtnContado";
+            rbtnContado.Size = new Size(87, 24);
+            rbtnContado.TabIndex = 16;
+            rbtnContado.TabStop = true;
+            rbtnContado.Text = "Contado";
+            rbtnContado.UseVisualStyleBackColor = true;
+            rbtnContado.CheckedChanged += rbtnContado_CheckedChanged;
+            // 
+            // rbtnCredito
+            // 
+            rbtnCredito.AutoSize = true;
+            rbtnCredito.Location = new Point(64, 408);
+            rbtnCredito.Name = "rbtnCredito";
+            rbtnCredito.Size = new Size(79, 24);
+            rbtnCredito.TabIndex = 17;
+            rbtnCredito.TabStop = true;
+            rbtnCredito.Text = "Credito";
+            rbtnCredito.UseVisualStyleBackColor = true;
+            rbtnCredito.CheckedChanged += rbtnCredito_CheckedChanged;
+            // 
+            // Cliente
+            // 
+            Cliente.HeaderText = "Cliente";
+            Cliente.MinimumWidth = 6;
+            Cliente.Name = "Cliente";
+            Cliente.Width = 125;
+            // 
+            // Frances
+            // 
+            Frances.HeaderText = "Frances";
+            Frances.MinimumWidth = 6;
+            Frances.Name = "Frances";
+            Frances.Width = 125;
+            // 
+            // Bolillo
+            // 
+            Bolillo.HeaderText = "Bolillo";
+            Bolillo.MinimumWidth = 6;
+            Bolillo.Name = "Bolillo";
+            Bolillo.Width = 125;
+            // 
+            // Cupcake
+            // 
+            Cupcake.HeaderText = "Cupcake";
+            Cupcake.MinimumWidth = 6;
+            Cupcake.Name = "Cupcake";
+            Cupcake.Width = 125;
+            // 
+            // Total
+            // 
+            Total.HeaderText = "Total";
+            Total.MinimumWidth = 6;
+            Total.Name = "Total";
+            Total.Width = 125;
+            // 
+            // TipoPago
+            // 
+            TipoPago.HeaderText = "Tipo de Pago";
+            TipoPago.MinimumWidth = 6;
+            TipoPago.Name = "TipoPago";
+            TipoPago.Width = 125;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1443, 595);
+            Controls.Add(rbtnCredito);
+            Controls.Add(rbtnContado);
             Controls.Add(btnRestaurar);
             Controls.Add(TxtInteresCupcake);
             Controls.Add(TxtPrecioBolillo);
@@ -303,10 +339,13 @@
         private TextBox TxtPrecioBolillo;
         private TextBox TxtInteresCupcake;
         private Button btnRestaurar;
+        private RadioButton rbtnContado;
+        private RadioButton rbtnCredito;
         private DataGridViewTextBoxColumn Cliente;
         private DataGridViewTextBoxColumn Frances;
         private DataGridViewTextBoxColumn Bolillo;
         private DataGridViewTextBoxColumn Cupcake;
         private DataGridViewTextBoxColumn Total;
+        private DataGridViewTextBoxColumn TipoPago;
     }
 }

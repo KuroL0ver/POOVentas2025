@@ -6,8 +6,8 @@ namespace POOVentas2025
         public Form1()
         {
             InitializeComponent();
-        }
 
+        }
         //Pan es el principal de todos los prodcutos(los tipos de panes)
         //Se usa el ToString para identificar que la C son los pesos y la P el porcentaje
         //El Form1_Load, cuando inice el programa se mostrará los precios de los panes
@@ -70,11 +70,24 @@ namespace POOVentas2025
         //El botón de agregar, ayuda a agrergar cuantos panes son y el total de ellos
         private void Agregar_Click(object sender, EventArgs e)
         {
-          
-            //Se usa el Try Parse para una cadena de texto en valor decimal, y el usuario no pone un número en el TxtBox, para que no se caiga el programa
-            //los && es para que se cumpla lo que el usuario puso en los TxtBox
-            //El Trim se puso para que no tengan espacios en blanco
-            //Lo que es del signo de pesos y porcentaje se puso para que no afecte en el programa a la hora de ejecutarlo
+            Pago formaPago;
+            string tipoPago;
+            if (rbtnContado.Checked)
+            {
+                formaPago = new Contado(0);
+                tipoPago = "Contado";
+            }
+            else if (rbtnCredito.Checked)
+            {
+                formaPago = new Credito(0);
+                tipoPago = "Crédito";
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una forma de pago c:");
+                return;
+            }
+
             if (decimal.TryParse(TxtPanFrances.Text, out decimal panFrancesCantidad) &&
                 decimal.TryParse(TxtBolillo.Text, out decimal bolilloCantidad) &&
                 decimal.TryParse(TxtCupcake.Text, out decimal cupcakeCantidad) &&
@@ -82,30 +95,29 @@ namespace POOVentas2025
                 decimal.TryParse(TxtPrecioBolillo.Text.Replace("$", "").Trim(), out decimal precioBolillo) &&
                 decimal.TryParse(TxtInteresCupcake.Text.Replace("%", "").Trim(), out decimal interesCupcake))
             {
-                //Se multiplica los panes por la cantidad
                 decimal totalPanFrances = panFrancesCantidad * precioPanFrances;
                 decimal totalBolillo = bolilloCantidad * precioBolillo;
                 decimal totalCupcake = cupcakeCantidad * Pan.PrecioCupcake;
                 decimal totalConInteresCupcake = totalCupcake + (totalCupcake * interesCupcake);
 
-                //Suma total de todo
                 decimal total = totalPanFrances + totalBolillo + totalConInteresCupcake;
 
-                //Se agrega a la tabla
-                DgvPan.Rows.Add(TxtCliente.Text, TxtPanFrances.Text, TxtBolillo.Text, TxtCupcake.Text, total.ToString("F2"));
+                // Calcula el total con el tipo de pago seleccionado
+                formaPago.Monto = total;
+                decimal totalConPago = formaPago.CalcularTotal();
 
-                //Puse el F2 para que solo muestre dos decimales
+                // Agrega a la tabla
+                DgvPan.Rows.Add(TxtCliente.Text, panFrancesCantidad, bolilloCantidad, cupcakeCantidad, totalConPago.ToString("F2"), tipoPago);
+
                 if (decimal.TryParse(TxtTotal.Text, out decimal currentTotal))
                 {
-                    TxtTotal.Text = (currentTotal + total).ToString("F2");
+                    TxtTotal.Text = (currentTotal + totalConPago).ToString("F2");
                 }
                 else
                 {
-                    TxtTotal.Text = total.ToString("F2");
+                    TxtTotal.Text = totalConPago.ToString("F2");
                 }
             }
-            //Si no se pone un 0 en el TxtBox se aparecerá ese mensaje
-            //MessageBox.Show es para que aparezca el mensaje en pantalla
             else
             {
                 MessageBox.Show("Intente de nuevo D:");
@@ -133,6 +145,14 @@ namespace POOVentas2025
             TxtTotal.Clear();
         }
 
-        
+        private void rbtnContado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtnCredito_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
