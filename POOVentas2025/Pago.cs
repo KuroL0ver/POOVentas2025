@@ -11,6 +11,9 @@
         //Constructor
         public Pago(decimal monto, decimal interes)
         {
+            //Polimorfismo, Contado y Crédito ponemos new para que se cree un objeto con el monto y el interés
+            Pago pagoContado = new Contado(100);
+            Pago pagoCredito = new Credito(100);
             Monto = monto;
             Interes = interes;
             
