@@ -38,6 +38,12 @@
             TxtCupcake = new TextBox();
             Agregar = new Button();
             DgvPan = new DataGridView();
+            Cliente = new DataGridViewTextBoxColumn();
+            Frances = new DataGridViewTextBoxColumn();
+            Bolillo = new DataGridViewTextBoxColumn();
+            Cupcake = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
+            TipoPago = new DataGridViewTextBoxColumn();
             label5 = new Label();
             TxtTotal = new TextBox();
             TxtPrecioPanFrances = new TextBox();
@@ -46,12 +52,6 @@
             btnRestaurar = new Button();
             rbtnContado = new RadioButton();
             rbtnCredito = new RadioButton();
-            Cliente = new DataGridViewTextBoxColumn();
-            Frances = new DataGridViewTextBoxColumn();
-            Bolillo = new DataGridViewTextBoxColumn();
-            Cupcake = new DataGridViewTextBoxColumn();
-            Total = new DataGridViewTextBoxColumn();
-            TipoPago = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)DgvPan).BeginInit();
             SuspendLayout();
             // 
@@ -161,6 +161,48 @@
             DgvPan.TabIndex = 9;
             DgvPan.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // Cliente
+            // 
+            Cliente.HeaderText = "Cliente";
+            Cliente.MinimumWidth = 6;
+            Cliente.Name = "Cliente";
+            Cliente.Width = 125;
+            // 
+            // Frances
+            // 
+            Frances.HeaderText = "Frances";
+            Frances.MinimumWidth = 6;
+            Frances.Name = "Frances";
+            Frances.Width = 125;
+            // 
+            // Bolillo
+            // 
+            Bolillo.HeaderText = "Bolillo";
+            Bolillo.MinimumWidth = 6;
+            Bolillo.Name = "Bolillo";
+            Bolillo.Width = 125;
+            // 
+            // Cupcake
+            // 
+            Cupcake.HeaderText = "Cupcake";
+            Cupcake.MinimumWidth = 6;
+            Cupcake.Name = "Cupcake";
+            Cupcake.Width = 125;
+            // 
+            // Total
+            // 
+            Total.HeaderText = "Total";
+            Total.MinimumWidth = 6;
+            Total.Name = "Total";
+            Total.Width = 125;
+            // 
+            // TipoPago
+            // 
+            TipoPago.HeaderText = "Tipo de Pago";
+            TipoPago.MinimumWidth = 6;
+            TipoPago.Name = "TipoPago";
+            TipoPago.Width = 125;
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -244,48 +286,6 @@
             rbtnCredito.Text = "Credito";
             rbtnCredito.UseVisualStyleBackColor = true;
             rbtnCredito.CheckedChanged += rbtnCredito_CheckedChanged;
-            // 
-            // Cliente
-            // 
-            Cliente.HeaderText = "Cliente";
-            Cliente.MinimumWidth = 6;
-            Cliente.Name = "Cliente";
-            Cliente.Width = 125;
-            // 
-            // Frances
-            // 
-            Frances.HeaderText = "Frances";
-            Frances.MinimumWidth = 6;
-            Frances.Name = "Frances";
-            Frances.Width = 125;
-            // 
-            // Bolillo
-            // 
-            Bolillo.HeaderText = "Bolillo";
-            Bolillo.MinimumWidth = 6;
-            Bolillo.Name = "Bolillo";
-            Bolillo.Width = 125;
-            // 
-            // Cupcake
-            // 
-            Cupcake.HeaderText = "Cupcake";
-            Cupcake.MinimumWidth = 6;
-            Cupcake.Name = "Cupcake";
-            Cupcake.Width = 125;
-            // 
-            // Total
-            // 
-            Total.HeaderText = "Total";
-            Total.MinimumWidth = 6;
-            Total.Name = "Total";
-            Total.Width = 125;
-            // 
-            // TipoPago
-            // 
-            TipoPago.HeaderText = "Tipo de Pago";
-            TipoPago.MinimumWidth = 6;
-            TipoPago.Name = "TipoPago";
-            TipoPago.Width = 125;
             // 
             // Form1
             // 
